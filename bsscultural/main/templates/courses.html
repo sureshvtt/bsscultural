@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block body_part %}
+
+<!-- Page banner -->
+<section id="bannerSection" style="background:url(/static/themes/images/banner/blog.png) no-repeat center center #000;">
+	<div class="container" >	
+		<h1 id="pageTitle">Courses
+		</h1>
+	</div>
+</section> 
+<!-- Page banner end -->
+
+<section id="bodySection">
+	<div class="container">					
+		<div class="row">
+			<div class="span12">
+				<table class="table table-bordered" role="table">
+					<tr>
+						<th>Sl No</th><th>Course Name</th><th>Course Duration</th><th>Eligibility</th>
+					</tr>
+					{% for course in courses %}
+						<tr>
+							<td>{{forloop.counter}}</td>
+							<td><a href="#modal{{forloop.counter}}" data-toggle="modal">{{course.name}}</a></td>
+							<td>{{course.duration}}</td>
+							<td>{{course.eligibility}}</td>
+						</tr>
+						<!-- Modal -->
+						<div id="modal{{forloop.counter}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  	<div class="modal-header">
+						    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						    	<h3 id="myModalLabel">Course Details</h3>
+						  	</div>
+						  	<div class="modal-body" align="left">
+						    	<h5>Course Name : {{course.name}}</h5>
+						    	<p>No. of Exams : {{course.no_of_exams}}</p>
+						    	<p><u>Subjects</u></p>
+						    	{% for heading in course.subject_heading_set.all %}
+						    	{{heading}}<br>
+						    	{% endfor %}
+						  	</div>
+						  	<div class="modal-footer">
+						    	<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+						  	</div>
+						</div>
+						<!-- end modal -->
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -32,7 +32,7 @@ a, a:link, a:active, a:hover, img{outline:none;}
 /* Sections------------------------- */
 #headerSection{ background:url(../images/headerbg.png) repeat-x 0 0 ;}
 #headerSection .navbar { padding-top:20px; margin-bottom: 0;}
-#headerSection .navbar .brand {padding: 0px 0px 0px; color: #071418;text-shadow: 0 0px 0 white;font-weight: bold; line-height: 1em;}
+#headerSection .navbar .brand {padding: 0px 0px 0px; color: #000;text-shadow: 0 0px 0 white;font-weight: bold; line-height: 1em;}
 /* background color carousel */
 #mapSection, #carouselSection{border-top:4px solid #D33800; border-bottom: 4px solid #717171; background: #95571E; color:#fff}
 #bannerSection{border-top:4px solid #D33800; border-bottom:4px solid #717171; color:#fff}
